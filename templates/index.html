@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+   <body>
+      <form action = "/make_session" method = "POST">
+         <p><h3>Enter userID</h3></p>
+         <p><input type = 'text' name = 'nm'/></p>
+         <p><input type = 'submit' value = 'Login'/></p>
+      </form>
+   </body>
+</html>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+   <body>
+    {% for (answers,correct),answered in q %}
+        <li>
+        {% for i in answers %}
+            {% if i in correct %}
+                <input type='submit' class="btn btn-primary mb-2" style="background-color: greenyellow" value='{{i}}' name='answer' disabled/>
+            {% elif i == answered %}
+                <input type='submit' class="btn btn-primary mb-2" style="background-color: darkred" value='{{i}}' name='answer' disabled/>        
+            {% else %}
+                <input type='submit' class="btn btn-primary mb-2" value='{{i}}' name='answer' disabled/>
+            {% endif %}
+        {% endfor %}
+        </li>
+    {% endfor %}
+   </body>
+</html>
+{% endblock %}

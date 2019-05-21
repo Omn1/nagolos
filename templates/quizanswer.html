@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Ударения</h1>
+<form name='autosub' action='/next_question' method='POST'>
+    <ol>
+        <li>Куда падает ударение в слове <b>{{question}}</b>?</li>
+        {% for i in answers %}
+            {% if i in correct %}
+                <input type='submit' class="btn btn-primary mb-2" style="background-color: greenyellow" value='{{i}}' name='answer' disabled/>
+            {% elif i == answered %}
+                <input type='submit' class="btn btn-primary mb-2" style="background-color: darkred" value='{{i}}' name='answer' disabled/>        
+            {% else %}
+                <input type='submit' class="btn btn-primary mb-2" value='{{i}}' name='answer' disabled/>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</form>
+<script>
+    window.onload=function(){ 
+        window.setTimeout(function(){document.autosub.submit();}, 1000);
+    };
+</script>
+{% endblock %}

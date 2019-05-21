@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Ударения</h1>
+<form action='/submit' method='POST'>
+    <ol>
+        <li>Куда падает ударение в слове <b>{{q}}</b>?</li>
+        {% for i in a %}
+            <input type="submit" class="btn btn-primary mb-2" value="{{i}}" name="answer"/>
+        {% endfor %}
+    </ol>
+</form>
+<a class="btn btn-secondary mb-2" href="{{ url_for('get_results') }}">Закончить</a>
+{% endblock %}
