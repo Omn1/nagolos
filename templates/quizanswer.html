@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html.j2' %}
 
 {% block content %}
 <h1>Ударения</h1>
@@ -16,9 +16,10 @@
         {% endfor %}
     </ol>
 </form>
+<a class="btn btn-secondary mb-2" href="{{ url_for('get_results') }}">Закончить</a>
 <script>
     window.onload=function(){ 
-        window.setTimeout(function(){document.autosub.submit();}, 1000);
+        window.setTimeout(function(){document.autosub.submit();}, 300);
     };
 </script>
 {% endblock %}

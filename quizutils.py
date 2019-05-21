@@ -15,6 +15,8 @@ def load_questions():
     questions = dict()
     for word in f:
         word = word.strip()
+        if word == '#':
+            break
         q = make_lower(word)
         questions[q] = [[],[]]
         if word.find(' (') != -1: word = word[:word.find(' (')]
